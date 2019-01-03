@@ -20,7 +20,7 @@ class Queue:
         """
         if not self.is_full():
             self.items.insert(0, item)
-            print("QUEUE-ADD item: %s", item)
+            print("QUEUE-ADD item: %s" % item)
             return True
         return False
 

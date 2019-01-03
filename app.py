@@ -27,8 +27,12 @@ def main():
     dataListener = QueueListener()
     thread = Thread(target=dataListener.listen, args=(lock, queue))
     thread.start()
+
     print("Queue is active")
     while True:
+        if not thread.isAlive():
+            print("ERR: DataListener is not Active, shutting down.")
+            break
         queue.execute_clearance(dbc.safe_execute_sql, lock)
     print("Queue is deactivated")
 
