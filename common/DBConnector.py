@@ -1,8 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
 from common.SQL_CONSTANTS import *
-from operator import itemgetter
-import collections
 
 class DBC(object):
     def __init__(self, host: str = GBL_HOST, port: int = GBL_PORT,
